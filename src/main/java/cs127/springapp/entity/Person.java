@@ -1,16 +1,17 @@
 package cs127.springapp.entity;
 
-import cs127.springapp.entity.request.AddPersonRequest;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "PERSON") // table name in db
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class Person {
