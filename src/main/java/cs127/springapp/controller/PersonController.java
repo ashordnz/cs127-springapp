@@ -41,8 +41,8 @@ public class PersonController {
     }
 
     @GetMapping(path = "/surname/{lastName}")
-    public Person getPersonBySurname(@PathVariable String lastName) {
-        return personService.getPersonBySurname(lastName);
+    public List<Person> getPersonsBySurname(@PathVariable String lastName) {
+        return personService.getPersonsBySurname(lastName);
     }
 
     @PatchMapping(path = "/update/{personId}")

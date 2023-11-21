@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> { // <Entity,Identifier>
     Person findByPersonId(Long id);
@@ -13,7 +15,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> { // <Enti
             value = "SELECT * FROM PERSON WHERE LAST_NAME = ?1",
             nativeQuery = true
     ) // ?1 - dynamic argument 1
-    Person findBySurname(String lastName);
+    List<Person> findBySurname(String lastName);
     void deletePersonByPersonId(Long personId);
 //    @Query(
 //            value = "UPDATE PERSON p SET p.firstname=?1, p.middleName=?2, p.lastName=?3 WHERE p.personId=?4",
